@@ -9,8 +9,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<slf4j.version>1.4.3</slf4j.version>
-		<spring.maven.artifact.version>3.1.1</spring.maven.artifact.version>
+		<slf4j.version>1.7.13</slf4j.version><!-- 1.4.3 -->
+		<mybatis.version>1.2.3</mybatis.version><!-- 1.0.2 -->
+		<spring.version>3.2.16.RELEASE</spring.version><!-- 3.1.1.RELEASE / 4.2.4.RELEASE -->
 		<project.organization.name>Scott Sinclair
 			&lt;scottysinclair@gmail.com&gt;</project.organization.name>
 		<project.inceptionYear>2014</project.inceptionYear>
@@ -18,12 +19,10 @@
 
 	<dependencies>
 
-
-
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>1.0.2</version>
+			<version>${mybatis.version}</version>
 			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
@@ -49,29 +48,30 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>3.1.1.RELEASE</version>
+			<version>${spring.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>3.1.1.RELEASE</version>
+			<version>${spring.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.apache.servicemix.bundles</groupId> <artifactId>org.apache.servicemix.bundles.mybatis</artifactId> 
+		<!-- <dependency> <groupId>org.apache.servicemix.bundles</groupId> 
+		<artifactId>org.apache.servicemix.bundles.mybatis</artifactId> 
 			<version>3.0.4_2</version> <scope>test</scope> </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>3.1.1.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.7</version>
+			<version>${slf4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -85,18 +85,16 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
+			<version>4.8.1</version><!-- 4.12 -->
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>2.3.2</version>
+			<version>2.3.2</version><!-- ? h2 -->
 			<scope>provided</scope>
 		</dependency>
-
-
 
 	</dependencies>
 
@@ -124,7 +122,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.3</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
